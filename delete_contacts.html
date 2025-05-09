@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Contacts</title>
+    <style>
+        body {
+            background-image: url("https://static.vecteezy.com/system/resources/thumbnails/008/617/161/small/abstract-gradient-pastel-blue-and-purple-background-neon-pastel-color-template-for-website-or-presentation-free-free-vector.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+        h2 {
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+        }
+        button {
+            background-color: white;
+            color: black;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: aqua;
+        }
+        .back-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-btn:hover {
+            background-color: aqua;
+        }
+
+        table {
+    width: 50%;
+    border-collapse: collapse;
+    margin:auto;
+    text-align: center;
+    margin-top: 5%;
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+    th, td {
+        padding: 5px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h2>Delete Contact</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        {% if contacts %}
+            {% for name, details in contacts.items() %}
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>{{ details['phoneno'] }}</td>
+                    <td>{{ details['email'] }}</td>
+                    <td>
+                        <form action="{{ url_for('delete_contact', uname=uname, contact_name=name) }}" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="4">No contacts found.</td>
+            </tr>
+        {% endif %}
+    </table>
+    <a href="{{ url_for('navbar', uname=uname) }}" class="back-btn">Back</a>
+</body>
+</html>

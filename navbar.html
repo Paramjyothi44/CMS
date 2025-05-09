@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+</head>
+<style>
+    body{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/008/617/161/small/abstract-gradient-pastel-blue-and-purple-background-neon-pastel-color-template-for-website-or-presentation-free-free-vector.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+nav {
+    background-color:dodgerblue;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li {
+    padding: 10px 20px;
+    color:black;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+nav ul li a:hover {
+    color:crimson;
+}
+</style>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{url_for('add',uname=uname)}}">Add Contacts</a></li>
+            <li><a href="{{url_for('edit',uname=uname)}}">Edit Contacts</a></li>
+            <li><a href="{{url_for('view',uname=uname)}}">View Contacts</a></li>
+            <li><a href="{{url_for('delete',uname=uname)}}">Delete Contacts</a></li>
+            <li><a href="{{url_for('logout',uname=uname)}}">Logout</a></li>
+        </ul>
+    </nav>
+    <center><h1>Welcome to CMS Application</h1></center>
+</body>
+</html>

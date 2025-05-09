@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regsiter</title>
+</head>
+<style>
+    body{
+        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/008/617/161/small/abstract-gradient-pastel-blue-and-purple-background-neon-pastel-color-template-for-website-or-presentation-free-free-vector.jpg");
+        background-repeat:no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container input{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color:black;
+        padding: 10px 20px;
+        font-size: 20px;
+        font-weight: lighter;
+        width:100%;
+        border-radius: 10px;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    button{
+        color:black;
+        padding:10px;
+        width:50%;
+        border:none;
+        border-radius: 5px;
+        cursor:pointer;
+        align-items: center;
+        font-size: large;
+    }
+    .btn:hover{
+        cursor: pointer;
+        background-color:aqua;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form method="post">
+            <input type="text" placeholder="username" name="username"><p></p>
+            <input type="password" placeholder="password" name="password"><p></p>
+            <input type="text" placeholder="phoneno" name="mobileno"><p></p>
+            <input type="email" placeholder="email" name="email"><p></p>
+            <center><button class="btn">Register</button></center>
+        </form>
+    </div>
+</body>
+</html>
